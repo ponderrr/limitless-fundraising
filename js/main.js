@@ -1,0 +1,481 @@
+/* ========================================
+   LIMITLESS FUNDRAISING - MAIN JAVASCRIPT
+   ======================================== */
+
+// DOM Content Loaded
+document.addEventListener("DOMContentLoaded", function () {
+  initNavigation();
+  initContactForm();
+  initSmoothScrolling();
+  initImageFallbacks();
+  updateCopyrightYear();
+});
+
+/* ========================================
+   NAVIGATION FUNCTIONS
+   ======================================== */
+
+function initNavigation() {
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const navbarPill = document.querySelector(".navbar-pill");
+  const logoContainer = document.querySelector(".logo-container");
+
+  // Mobile menu toggle
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener("click", toggleMobileMenu);
+  }
+
+  // Logo click - scroll to top
+  if (logoContainer) {
+    logoContainer.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // Active section detection
+  window.addEventListener("scroll", handleScroll);
+
+  // Close mobile menu on link click
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileMenuOnClick);
+  });
+}
+
+function toggleMobileMenu() {
+  const navbarPill = document.querySelector(".navbar-pill");
+  const hamburgerLines = document.querySelectorAll(".hamburger-line");
+
+  if (navbarPill) {
+    navbarPill.classList.toggle("mobile-active");
+
+    // Animate hamburger
+    hamburgerLines.forEach((line, index) => {
+      if (navbarPill.classList.contains("mobile-active")) {
+        if (index === 0)
+          line.style.transform = "rotate(45deg) translate(5px, 5px)";
+        if (index === 1) line.style.opacity = "0";
+        if (index === 2)
+          line.style.transform = "rotate(-45deg) translate(7px, -6px)";
+      } else {
+        line.style.transform = "none";
+        line.style.opacity = "1";
+      }
+    });
+  }
+}
+
+function closeMobileMenuOnClick() {
+  const navbarPill = document.querySelector(".navbar-pill");
+  const hamburgerLines = document.querySelectorAll(".hamburger-line");
+
+  if (navbarPill && navbarPill.classList.contains("mobile-active")) {
+    navbarPill.classList.remove("mobile-active");
+
+    // Reset hamburger
+    hamburgerLines.forEach((line) => {
+      line.style.transform = "none";
+      line.style.opacity = "1";
+    });
+  }
+}
+
+function handleScroll() {
+  const sections = ["hero", "about", "mission", "how-it-works", "contact"];
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  let currentSection = "";
+
+  sections.forEach((sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      const offset = 100; // Offset for fixed header
+
+      if (rect.top <= offset && rect.bottom >= offset) {
+        currentSection = sectionId;
+      }
+    }
+  });
+
+  // Update active nav link
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${currentSection}`) {
+      link.classList.add("active");
+    }
+  });
+}
+
+/* ========================================
+   SMOOTH SCROLLING FUNCTIONS
+   ======================================== */
+
+function initSmoothScrolling() {
+  // Global scroll functions for CTA buttons
+  window.scrollToContact = function () {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  window.scrollToHowItWorks = function () {
+    const howItWorksSection = document.getElementById("how-it-works");
+    if (howItWorksSection) {
+      howItWorksSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+}
+
+/* ========================================
+   CONTACT FORM FUNCTIONS
+   ======================================== */
+
+function initContactForm() {
+  const form = document.getElementById("consultation-form");
+  if (!form) return;
+
+  // Form submission
+  form.addEventListener("submit", handleFormSubmit);
+
+  // Real-time validation
+  const inputs = form.querySelectorAll("input[required], textarea");
+  inputs.forEach((input) => {
+    input.addEventListener("blur", function () {
+      validateField(this);
+    });
+
+    input.addEventListener("input", function () {
+      if (this.classList.contains("error")) {
+        validateField(this);
+      }
+    });
+  });
+}
+
+function validateField(field) {
+  const value = field.value.trim();
+  const fieldName = field.name;
+  const errorElement = document.getElementById(fieldName + "-error");
+
+  // Clear previous error
+  hideError(fieldName);
+  field.classList.remove("error");
+
+  // Validation rules
+  let isValid = true;
+  let errorMessage = "";
+
+  switch (fieldName) {
+    case "fullName":
+      if (value.length < 2) {
+        isValid = false;
+        errorMessage = "Please enter your full name (at least 2 characters)";
+      }
+      break;
+
+    case "email":
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        isValid = false;
+        errorMessage = "Please enter a valid email address";
+      }
+      break;
+
+    case "chapter":
+      if (value.length < 2) {
+        isValid = false;
+        errorMessage = "Please enter your chapter or organization name";
+      }
+      break;
+
+    case "goal":
+      if (value.length < 5) {
+        isValid = false;
+        errorMessage = "Please describe your fundraising goal";
+      }
+      break;
+  }
+
+  // Show/hide error
+  if (!isValid) {
+    showError(fieldName, errorMessage);
+    field.classList.add("error");
+  }
+
+  return isValid;
+}
+
+function validateAllFields() {
+  const form = document.getElementById("consultation-form");
+  const requiredFields = form.querySelectorAll("input[required]");
+  let allValid = true;
+
+  requiredFields.forEach((field) => {
+    if (!validateField(field)) {
+      allValid = false;
+    }
+  });
+
+  return allValid;
+}
+
+function showError(fieldName, message) {
+  const errorElement = document.getElementById(fieldName + "-error");
+  if (errorElement) {
+    errorElement.textContent = message;
+    errorElement.style.display = "block";
+  }
+}
+
+function hideError(fieldName) {
+  const errorElement = document.getElementById(fieldName + "-error");
+  if (errorElement) {
+    errorElement.textContent = "";
+    errorElement.style.display = "none";
+  }
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  // Validate all fields first
+  if (!validateAllFields()) {
+    return;
+  }
+
+  // Show loading state
+  showLoadingState();
+
+  // Collect form data
+  const formData = new FormData(event.target);
+  const formObject = Object.fromEntries(formData);
+
+  // Add timestamp
+  formObject.timestamp = new Date().toISOString();
+  formObject.source = "Limitless Fundraising Website";
+
+  console.log("Form submitted:", formObject);
+
+  // Simulate successful submission for now
+  // TODO: Replace with actual EmailJS implementation
+  setTimeout(() => {
+    hideLoadingState();
+    showSuccessMessage();
+    resetForm();
+  }, 2000);
+
+  /* EMAILJS INTEGRATION - READY TO IMPLEMENT
+    emailjs.sendForm(
+        'your_service_id',
+        'your_template_id', 
+        event.target,
+        'your_public_key'
+    )
+    .then(() => {
+        hideLoadingState();
+        showSuccessMessage();
+        resetForm();
+    })
+    .catch((error) => {
+        hideLoadingState();
+        showErrorMessage('Failed to send message. Please try again.');
+        console.error('EmailJS error:', error);
+    });
+    */
+}
+
+function showLoadingState() {
+  const submitBtn = document.getElementById("submit-btn");
+  const btnText = submitBtn.querySelector(".btn-text");
+  const btnLoading = submitBtn.querySelector(".btn-loading");
+
+  submitBtn.disabled = true;
+  btnText.style.display = "none";
+  btnLoading.style.display = "inline-flex";
+}
+
+function hideLoadingState() {
+  const submitBtn = document.getElementById("submit-btn");
+  const btnText = submitBtn.querySelector(".btn-text");
+  const btnLoading = submitBtn.querySelector(".btn-loading");
+
+  submitBtn.disabled = false;
+  btnText.style.display = "inline";
+  btnLoading.style.display = "none";
+}
+
+function showSuccessMessage() {
+  // Create success message
+  const form = document.getElementById("consultation-form");
+  const successDiv = document.createElement("div");
+  successDiv.className = "success-message";
+  successDiv.innerHTML = `
+        <div style="background: #10B981; color: white; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;">
+            <i class="fa-solid fa-check-circle" style="margin-right: 8px;"></i>
+            Thank you! We've received your message and will get back to you within 24 hours.
+        </div>
+    `;
+
+  form.appendChild(successDiv);
+
+  // Remove after 5 seconds
+  setTimeout(() => {
+    if (successDiv.parentNode) {
+      successDiv.parentNode.removeChild(successDiv);
+    }
+  }, 5000);
+}
+
+function showErrorMessage(message) {
+  // Create error message
+  const form = document.getElementById("consultation-form");
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error-message-global";
+  errorDiv.innerHTML = `
+        <div style="background: #DC2626; color: white; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;">
+            <i class="fa-solid fa-exclamation-circle" style="margin-right: 8px;"></i>
+            ${message}
+        </div>
+    `;
+
+  form.appendChild(errorDiv);
+
+  // Remove after 5 seconds
+  setTimeout(() => {
+    if (errorDiv.parentNode) {
+      errorDiv.parentNode.removeChild(errorDiv);
+    }
+  }, 5000);
+}
+
+function resetForm() {
+  const form = document.getElementById("consultation-form");
+  form.reset();
+
+  // Clear any error states
+  const errorFields = form.querySelectorAll(".error");
+  errorFields.forEach((field) => {
+    field.classList.remove("error");
+  });
+
+  // Clear error messages
+  const errorMessages = form.querySelectorAll(".error-message");
+  errorMessages.forEach((msg) => {
+    msg.textContent = "";
+    msg.style.display = "none";
+  });
+}
+
+/* ========================================
+   UTILITY FUNCTIONS
+   ======================================== */
+
+function initImageFallbacks() {
+  // Image fallback handling is done via onerror attribute in HTML
+  // This function can be used for additional image handling if needed
+}
+
+function handleImageError(img) {
+  img.style.display = "none";
+  const placeholder = img.parentElement.querySelector(".photo-placeholder");
+  if (placeholder) {
+    placeholder.style.display = "flex";
+  }
+}
+
+function updateCopyrightYear() {
+  const copyrightElement = document.querySelector(".copyright-text");
+  if (copyrightElement) {
+    const currentYear = new Date().getFullYear();
+    copyrightElement.textContent = `© ${currentYear} Limitless Fundraising. All rights reserved.`;
+  }
+}
+
+/* ========================================
+   PERFORMANCE & ACCESSIBILITY
+   ======================================== */
+
+// Intersection Observer for animations (optional enhancement)
+function initIntersectionObserver() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+      }
+    });
+  }, observerOptions);
+
+  // Observe elements for animation
+  const animateElements = document.querySelectorAll(
+    ".team-card, .step-card, .mission-card"
+  );
+  animateElements.forEach((el) => observer.observe(el));
+}
+
+// Keyboard navigation support
+document.addEventListener("keydown", function (event) {
+  // Escape key closes mobile menu
+  if (event.key === "Escape") {
+    const navbarPill = document.querySelector(".navbar-pill");
+    if (navbarPill && navbarPill.classList.contains("mobile-active")) {
+      closeMobileMenuOnClick();
+    }
+  }
+});
+
+// Performance monitoring
+window.addEventListener("load", function () {
+  // Log performance metrics
+  if ("performance" in window) {
+    const perfData = performance.getEntriesByType("navigation")[0];
+    console.log(
+      "Page load time:",
+      perfData.loadEventEnd - perfData.loadEventStart,
+      "ms"
+    );
+  }
+});
+
+/* ========================================
+   SOCIAL MEDIA TRACKING (OPTIONAL)
+   ======================================== */
+
+function trackSocialClick(platform) {
+  // Analytics tracking for social media clicks
+  console.log(`Social media click: ${platform}`);
+
+  // Example: Google Analytics event
+  // if (typeof gtag !== 'undefined') {
+  //     gtag('event', 'social_click', {
+  //         'event_category': 'social',
+  //         'event_label': platform
+  //     });
+  // }
+}
+
+// Add click tracking to social links
+document.addEventListener("DOMContentLoaded", function () {
+  const socialLinks = document.querySelectorAll(".social-link");
+  socialLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      const platform = this.getAttribute("aria-label").toLowerCase();
+      trackSocialClick(platform);
+    });
+  });
+});
