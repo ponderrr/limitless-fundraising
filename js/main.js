@@ -93,7 +93,7 @@ function handleScroll() {
     const section = document.getElementById(sectionId);
     if (section) {
       const rect = section.getBoundingClientRect();
-      const offset = 100; // Offset for fixed header
+      const offset = 80; // Offset for fixed glassmorphism navbar
 
       if (rect.top <= offset && rect.bottom >= offset) {
         currentSection = sectionId;
