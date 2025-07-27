@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initContactForm();
   initSmoothScrolling();
   initImageFallbacks();
+  initVideoHandling();
   updateCopyrightYear();
 });
 
@@ -381,6 +382,27 @@ function resetForm() {
 function initImageFallbacks() {
   // Image fallback handling is done via onerror attribute in HTML
   // This function can be used for additional image handling if needed
+}
+
+function initVideoHandling() {
+  const video = document.querySelector('.logo-animation-video');
+  
+  if (video) {
+    // Handle video load success
+    video.addEventListener('loadeddata', function() {
+      console.log('Video loaded successfully');
+    });
+    
+    // Handle video load error
+    video.addEventListener('error', function() {
+      console.log('Video failed to load');
+    });
+    
+    // Handle video play error
+    video.addEventListener('stalled', function() {
+      console.log('Video playback stalled');
+    });
+  }
 }
 
 function handleImageError(img) {
