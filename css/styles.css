@@ -12,8 +12,8 @@
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
   --white: #ffffff;
-  --glass-bg: rgba(42, 42, 42, 0.7);
-  --glass-border: rgba(76, 169, 239, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
   --error-red: #dc2626;
   --success-green: #10b981;
   --dark-surface: #1f1f1f;
@@ -119,9 +119,9 @@ p {
 .glass-base,
 .glass-card,
 .glass-card-large {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--glass-border);
   border-radius: 20px;
 }
 
@@ -202,7 +202,6 @@ p {
   box-shadow: 0 8px 32px rgba(10, 71, 115, 0.4),
     0 0 40px rgba(76, 169, 239, 0.2), 0 0 0 4px rgba(76, 169, 239, 0.6),
     0 0 0 8px rgba(76, 169, 239, 0.3);
-  outline: none;
 }
 
 .btn-secondary {
@@ -257,7 +256,6 @@ p {
   box-shadow: 0 8px 32px rgba(76, 169, 239, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 4px rgba(76, 169, 239, 0.6),
     0 0 0 8px rgba(76, 169, 239, 0.3);
-  outline: none;
 }
 
 /* ========================================
@@ -483,8 +481,8 @@ p {
   font-weight: 400;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 900px !important;
-  width: 100% !important;
+  max-width: 900px;
+  width: 100%;
   margin: 0;
 }
 
@@ -834,12 +832,11 @@ p {
 /* Swiper Carousel Styling */
 .mission-carousel {
   width: 100%;
-  height: 500px;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  aspect-ratio: 16/10;
+  aspect-ratio: 928/761;
 }
 
 .fraternity-swiper {
@@ -847,12 +844,23 @@ p {
   height: 100%;
 }
 
+.swiper-wrapper {
+  height: 100%;
+}
+
+.swiper-slide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .carousel-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center;
-  aspect-ratio: 16/10;
+  aspect-ratio: 928/761;
   background-color: rgba(42, 42, 42, 0.3);
 }
 
@@ -903,6 +911,20 @@ p {
   transform: scale(1.2);
 }
 
+/* Mission Content Right Side */
+.mission-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mission-floating-text {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 3;
+}
+
 /* Mission Card Styling */
 .mission-card {
   background: rgba(255, 255, 255, 0.02);
@@ -914,6 +936,7 @@ p {
   position: relative;
   overflow: hidden;
   transition: all 300ms ease;
+  width: 100%;
 }
 
 .mission-card::before {
@@ -935,12 +958,6 @@ p {
 .mission-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-}
-
-.mission-headlines {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 2rem;
 }
 
 .mission-headline {
@@ -996,6 +1013,40 @@ p {
   z-index: 2;
 }
 
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* All steps - Center alignment for words */
+.step-item:nth-child(1) .step-floating-text,
+.step-item:nth-child(2) .step-floating-text,
+.step-item:nth-child(3) .step-floating-text {
+  text-align: center;
+  align-self: center;
+}
+
+.step-floating-text {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.step-word {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #0a4773 0%, #0b5b96 50%, #4ca9ef 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
 .step-card {
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(20px);
@@ -1006,6 +1057,7 @@ p {
   transition: all 300ms ease;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .step-card::before {
@@ -1027,34 +1079,6 @@ p {
 .step-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-}
-
-.step-header {
-  margin-bottom: 1.5rem;
-  position: relative;
-  z-index: 2;
-}
-
-.step-number,
-.step-word {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  background: linear-gradient(135deg, #0a4773 0%, #0b5b96 50%, #4ca9ef 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.step-number {
-  font-size: 2.5rem;
-  margin-bottom: 0.25rem;
-}
-
-.step-word {
-  font-size: 2rem;
 }
 
 .step-description {
@@ -1095,6 +1119,7 @@ p {
   gap: 40px;
   position: relative;
   z-index: 2;
+  align-items: stretch;
 }
 
 .contact-form-card,
@@ -1108,7 +1133,9 @@ p {
   position: relative;
   overflow: hidden;
   transition: all 300ms ease;
-  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .contact-form-card::before,
@@ -1353,6 +1380,29 @@ p {
   transition: all 200ms ease;
 }
 
+/* Contact Logo Styling */
+.contact-logo {
+  margin-top: auto;
+  padding-top: 30px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-logo-image {
+  max-width: 120px;
+  height: auto;
+  opacity: 0.8;
+  transition: all 300ms ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+.contact-logo-image:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
 /* ========================================
    FLOATING COPYRIGHT
    ======================================== */
@@ -1400,12 +1450,8 @@ p {
     gap: 24px;
   }
 
-  .step-number {
-    font-size: 2.25rem;
-  }
-
   .step-word {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .about-section .section-title {
@@ -1441,11 +1487,17 @@ p {
 
   .mission-carousel {
     height: 400px;
+    height: 0;
+    padding-top: 62.5%; /* Fallback for aspect-ratio: 16/10 */
     aspect-ratio: 16/10;
   }
 
   .mission-headline {
     font-size: 2.25rem;
+  }
+
+  .mission-floating-text {
+    margin-bottom: 16px;
   }
 
   .contact-section .section-title {
@@ -1455,6 +1507,10 @@ p {
 
   .contact-grid {
     gap: 32px;
+  }
+
+  .contact-logo-image {
+    max-width: 100px;
   }
 }
 
@@ -1596,6 +1652,8 @@ p {
 
   .mission-carousel {
     height: 350px;
+    height: 0;
+    padding-top: 62.5%; /* Fallback for aspect-ratio: 16/10 */
     aspect-ratio: 16/10;
   }
 
@@ -1605,6 +1663,10 @@ p {
 
   .mission-headline {
     font-size: 2rem;
+  }
+
+  .mission-floating-text {
+    margin-bottom: 16px;
   }
 
   .mission-description {
@@ -1626,12 +1688,8 @@ p {
     gap: 24px;
   }
 
-  .step-number {
-    font-size: 2rem;
-  }
-
   .step-word {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .step-description {
@@ -1664,6 +1722,14 @@ p {
 
   .form-textarea {
     min-height: 70px;
+  }
+
+  .contact-logo {
+    padding-top: 24px;
+  }
+
+  .contact-logo-image {
+    max-width: 90px;
   }
 }
 
@@ -1778,6 +1844,8 @@ p {
 
   .mission-carousel {
     height: 280px;
+    height: 0;
+    padding-top: 62.5%; /* Fallback for aspect-ratio: 16/10 */
     aspect-ratio: 16/10;
   }
 
@@ -1789,6 +1857,10 @@ p {
     font-size: 1.75rem;
   }
 
+  .mission-floating-text {
+    margin-bottom: 12px;
+  }
+
   .mission-description {
     font-size: 0.9rem;
   }
@@ -1798,12 +1870,8 @@ p {
     margin-bottom: 30px;
   }
 
-  .step-number {
-    font-size: 1.75rem;
-  }
-
   .step-word {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .step-description {
@@ -1835,6 +1903,14 @@ p {
 
   .contact-icon i {
     font-size: 1rem;
+  }
+
+  .contact-logo {
+    padding-top: 20px;
+  }
+
+  .contact-logo-image {
+    max-width: 80px;
   }
 }
 

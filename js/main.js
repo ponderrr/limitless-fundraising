@@ -38,6 +38,9 @@ function initNavigation() {
   // Active section detection
   window.addEventListener("scroll", handleScroll);
 
+  // Initialize active section on page load
+  handleScroll();
+
   // Close mobile menu on link click
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
@@ -101,11 +104,14 @@ function handleScroll() {
     }
   });
 
-  // Update active nav link
+  // Update active nav link and aria-current attribute
   navLinks.forEach((link) => {
     link.classList.remove("active");
+    link.removeAttribute("aria-current");
+
     if (link.getAttribute("href") === `#${currentSection}`) {
       link.classList.add("active");
+      link.setAttribute("aria-current", "page");
     }
   });
 }
@@ -257,42 +263,33 @@ function handleFormSubmit(event) {
   // Show loading state
   showLoadingState();
 
-  // Collect form data
-  const formData = new FormData(event.target);
-  const formObject = Object.fromEntries(formData);
+  // Prepare form data for EmailJS
+  const formData = {
+    name: document.getElementById("fullName").value,
+    email: document.getElementById("email").value,
+    chapter: document.getElementById("chapter").value,
+    goal: document.getElementById("goal").value,
+    message:
+      document.getElementById("message").value ||
+      "No additional message provided",
+  };
 
-  // Add timestamp
-  formObject.timestamp = new Date().toISOString();
-  formObject.source = "Limitless Fundraising Website";
-
-  console.log("Form submitted:", formObject);
-
-  // Simulate successful submission for now
-  // TODO: Replace with actual EmailJS implementation
-  setTimeout(() => {
-    hideLoadingState();
-    showSuccessMessage();
-    resetForm();
-  }, 2000);
-
-  /* EMAILJS INTEGRATION - READY TO IMPLEMENT
-    emailjs.sendForm(
-        'your_service_id',
-        'your_template_id', 
-        event.target,
-        'your_public_key'
-    )
-    .then(() => {
-        hideLoadingState();
-        showSuccessMessage();
-        resetForm();
+  // Send email using EmailJS
+  emailjs
+    .send("service_sd9b6tp", "template_hc960g6", formData)
+    .then(function (response) {
+      console.log("Email sent successfully:", response);
+      hideLoadingState();
+      showSuccessMessage();
+      resetForm();
     })
-    .catch((error) => {
-        hideLoadingState();
-        showErrorMessage('Failed to send message. Please try again.');
-        console.error('EmailJS error:', error);
+    .catch(function (error) {
+      console.error("Email send failed:", error);
+      hideLoadingState();
+      showErrorMessage(
+        "Oops! Something went wrong. Please try again or contact us directly at Team@limitlessfundraising.com"
+      );
     });
-    */
 }
 
 function showLoadingState() {
@@ -323,7 +320,7 @@ function showSuccessMessage() {
   successDiv.innerHTML = `
         <div style="background: #10B981; color: white; padding: 16px; border-radius: 8px; margin-top: 16px; text-align: center;">
             <i class="fa-solid fa-check-circle" style="margin-right: 8px;"></i>
-            Thank you! We've received your message and will get back to you within 24 hours.
+            Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
         </div>
     `;
 

@@ -37,6 +37,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- EmailJS Library -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -44,13 +50,17 @@
       <div class="navbar-pill-container">
         <div class="navbar-brand">
           <div class="logo-container">
-            <span class="logo-text">Limitless</span>
+            <a href="/" class="logo-text" aria-label="Homepage">Limitless</a>
           </div>
         </div>
 
         <nav class="navbar-pill">
           <ul class="nav-menu">
-            <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+            <li>
+              <a href="#how-it-works" class="nav-link" aria-current="page"
+                >How It Works</a
+              >
+            </li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#mission" class="nav-link">Mission</a></li>
             <li><a href="#contact" class="nav-link">Contact Us</a></li>
@@ -103,45 +113,45 @@
           <h2 class="section-title">How It Works</h2>
         </div>
 
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-header">
-              <h3 class="step-word">
-                <span class="step-number">01</span> Launch
-              </h3>
+        <ol class="steps-grid">
+          <li class="step-item">
+            <div class="step-floating-text">
+              <div class="step-word">Launch</div>
             </div>
-            <p class="step-description">
-              We handle the setup, strategy, and logistics — so you don't have
-              to. Just tell us your goal and we'll take it from there.
-            </p>
-          </div>
+            <div class="step-card">
+              <p class="step-description">
+                We handle the setup, strategy, and logistics — so you don't have
+                to. Just tell us your goal and we'll take it from there.
+              </p>
+            </div>
+          </li>
 
-          <div class="step-card">
-            <div class="step-header">
-              <h3 class="step-word">
-                <span class="step-number">02</span> Share
-              </h3>
+          <li class="step-item">
+            <div class="step-floating-text">
+              <div class="step-word">Share</div>
             </div>
-            <p class="step-description">
-              Use our built-in tools to spread the word fast. Whether it's
-              texts, emails, or social posts, we help you connect with the right
-              people.
-            </p>
-          </div>
+            <div class="step-card">
+              <p class="step-description">
+                Use our built-in tools to spread the word fast. Whether it's
+                texts, emails, or social posts, we help you connect with the
+                right people.
+              </p>
+            </div>
+          </li>
 
-          <div class="step-card">
-            <div class="step-header">
-              <h3 class="step-word">
-                <span class="step-number">03</span> Succeed
-              </h3>
+          <li class="step-item">
+            <div class="step-floating-text">
+              <div class="step-word">Succeed</div>
             </div>
-            <p class="step-description">
-              Sit back and watch the donations roll in. Our platform tracks
-              everything and keeps your campaign running smoothly from start to
-              finish.
-            </p>
-          </div>
-        </div>
+            <div class="step-card">
+              <p class="step-description">
+                Sit back and watch the donations roll in. Our platform tracks
+                everything and keeps your campaign running smoothly from start
+                to finish.
+              </p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -298,29 +308,41 @@
                 </div>
               </div>
               <!-- Navigation arrows -->
-              <div class="swiper-button-next" aria-label="Next slide"></div>
-              <div class="swiper-button-prev" aria-label="Previous slide"></div>
+              <div
+                class="swiper-button-next"
+                aria-label="Next slide"
+                tabindex="0"
+                role="button"
+              ></div>
+              <div
+                class="swiper-button-prev"
+                aria-label="Previous slide"
+                tabindex="0"
+                role="button"
+              ></div>
               <!-- Pagination dots -->
               <div class="swiper-pagination"></div>
             </div>
           </div>
 
-          <!-- Mission Card (Right Side) -->
-          <div class="mission-card">
-            <div class="mission-headlines">
-              <h3 class="mission-headline">Our Platform.</h3>
-              <h3 class="mission-headline">Your Chapter's Success.</h3>
+          <!-- Mission Content (Right Side) -->
+          <div class="mission-content-right">
+            <div class="mission-floating-text">
+              <div class="mission-headline">Our Platform.</div>
+              <div class="mission-headline">Your Chapter's Success.</div>
             </div>
-            <p class="mission-description">
-              Limitless Fundraising is designed to help fraternities and
-              sororities raise money the smart way — no spreadsheets, no stress.
-              From philanthropy events to chapter trips or house improvements,
-              we make it easy to launch, manage, and track your campaign from
-              start to finish. With powerful tools, personalized messaging, and
-              performance-driven support, your chapter can hit its goals faster
-              — and have fun doing it. Your cause. Our tech. One seamless
-              experience.
-            </p>
+            <div class="mission-card">
+              <p class="mission-description">
+                Limitless Fundraising is designed to help fraternities and
+                sororities raise money the smart way — no spreadsheets, no
+                stress. From philanthropy events to chapter trips or house
+                improvements, we make it easy to launch, manage, and track your
+                campaign from start to finish. With powerful tools, personalized
+                messaging, and performance-driven support, your chapter can hit
+                its goals faster — and have fun doing it. Your cause. Our tech.
+                One seamless experience.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -457,15 +479,24 @@
                 </div>
               </div>
             </div>
+
+            <div class="contact-logo">
+              <img
+                src="images/logo-contact-form.jpg"
+                alt="Limitless Fundraising Logo"
+                class="contact-logo-image"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Floating Copyright -->
-    <div class="floating-copyright">
+    <footer class="floating-copyright" role="contentinfo">
       © 2025 Limitless Fundraising. All rights reserved.
-    </div>
+    </footer>
 
     <!-- Swiper JavaScript -->
     <script
@@ -478,51 +509,61 @@
     <script src="js/main.js"></script>
     <script src="js/smooth-scroll.js"></script>
 
+    <!-- EmailJS Initialization -->
+    <script>
+      // Initialize EmailJS with public key
+      emailjs.init("tmieiu124Ber32QOE");
+    </script>
+
     <!-- Swiper Initialization -->
     <script>
-      // Check if the Swiper element exists before initializing
-      const swiperElement = document.querySelector(".fraternity-swiper");
+      // Get all Swiper elements with the class "fraternity-swiper"
+      const swiperElements = document.querySelectorAll(".fraternity-swiper");
 
-      if (swiperElement) {
-        // Initialize Swiper carousel
-        const swiper = new Swiper(".fraternity-swiper", {
-          // Enable autoplay
-          autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-          },
-          // Enable loop
-          loop: true,
-          // Speed of transition
-          speed: 800,
-          // Effect
-          effect: "slide",
-          // Navigation arrows
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          // Pagination dots
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            type: "bullets",
-          },
-          // Responsive breakpoints
-          breakpoints: {
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
+      // Check if any Swiper elements exist before initializing
+      if (swiperElements.length > 0) {
+        // Iterate over each Swiper element and initialize a separate instance
+        swiperElements.forEach((swiperElement, index) => {
+          // Initialize Swiper carousel for each element
+          const swiper = new Swiper(swiperElement, {
+            // Enable autoplay
+            autoplay: {
+              delay: 4000,
+              disableOnInteraction: false,
             },
-            768: {
-              slidesPerView: 1,
-              spaceBetween: 30,
+            // Enable loop
+            loop: true,
+            // Speed of transition
+            speed: 800,
+            // Effect
+            effect: "slide",
+            // Navigation arrows
+            navigation: {
+              nextEl: swiperElement.querySelector(".swiper-button-next"),
+              prevEl: swiperElement.querySelector(".swiper-button-prev"),
             },
-            1024: {
-              slidesPerView: 1,
-              spaceBetween: 40,
+            // Pagination dots
+            pagination: {
+              el: swiperElement.querySelector(".swiper-pagination"),
+              clickable: true,
+              type: "bullets",
             },
-          },
+            // Responsive breakpoints
+            breakpoints: {
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+              },
+            },
+          });
         });
       }
     </script>
