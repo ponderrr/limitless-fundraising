@@ -81,11 +81,9 @@
         <div class="hero-content">
           <div class="hero-text">
             <div class="hero-action-words">
-              <h1 class="action-word">
-                <span>Unlock</span>
-                <span>Limitless</span>
-                <span>Potential</span>
-              </h1>
+              <div class="action-word">Unlock</div>
+              <div class="action-word">Limitless</div>
+              <div class="action-word">Potential</div>
             </div>
             <p class="hero-description">
               Need Greek Life fundraising? We handle the strategy, tech, and
@@ -96,14 +94,18 @@
           <div class="hero-visual">
             <div class="infinity-container" id="infinity-3d-container">
               <!-- Video Animation -->
-              <video 
-                class="logo-animation-video" 
-                autoplay 
-                muted 
-                loop 
+              <video
+                class="logo-animation-video"
+                autoplay
+                muted
+                loop
                 playsinline
-                preload="metadata">
-                <source src="LimitlessFoundationTransparent.webm" type="video/webm">
+                preload="metadata"
+              >
+                <source
+                  src="LimitlessFoundationTransparent.webm"
+                  type="video/webm"
+                />
               </video>
             </div>
           </div>
@@ -571,6 +573,20 @@
           });
         });
       }
+
+      // Add error handling for carousel images
+      const carouselImages = document.querySelectorAll(".carousel-image");
+      carouselImages.forEach((img, index) => {
+        img.addEventListener("error", function () {
+          console.log(`Image failed to load: frat-image${index + 1}.jpg`);
+          // Add placeholder or hide broken image
+          this.style.display = "none";
+        });
+
+        img.addEventListener("load", function () {
+          console.log(`Image loaded successfully: frat-image${index + 1}.jpg`);
+        });
+      });
     </script>
   </body>
 </html>
