@@ -1,669 +1,526 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            Limitless Fundraising - The Smart Path to Greek Life Fundraising
-        </title>
-        <meta
-            name="description"
-            content="Launch. Share. Succeed. We handle the strategy, tech, and logistics while your chapter focuses on building community and achieving your goals."
-        />
-        <meta
-            name="keywords"
-            content="Greek life fundraising, fraternity fundraising, sorority fundraising, chapter fundraising, Texas A&M"
-        />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Limitless Fundraising - The Smart Path to Greek Life Fundraising
+    </title>
+    <meta
+      name="description"
+      content="Launch. Share. Succeed. We handle the strategy, tech, and logistics while your chapter focuses on building community and achieving your goals."
+    />
+    <meta
+      name="keywords"
+      content="Greek life fundraising, fraternity fundraising, sorority fundraising, chapter fundraising, Texas A&M"
+    />
 
-        <!-- Google Fonts - Poppins -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet"
-        />
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-        <!-- Font Awesome 6 -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-        <!-- Swiper CSS -->
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="css/styles.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
 
-        <!-- EmailJS Library -->
-        <script
-            type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-        ></script>
-    </head>
-    <body>
-        <!-- Navigation -->
-        <header id="header" class="navbar-container">
-            <div class="navbar-pill-container">
-                <div class="navbar-brand">
-                    <div class="logo-container">
-                        <a href="/" class="logo-text" aria-label="Homepage"
-                            >Limitless</a
-                        >
-                    </div>
-                </div>
+    <!-- EmailJS Library -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header id="header" class="navbar-container">
+      <div class="navbar-pill-container">
+        <div class="navbar-brand">
+          <div class="logo-container">
+            <a href="/" class="logo-text" aria-label="Homepage">Limitless</a>
+          </div>
+        </div>
 
-                <nav class="navbar-pill">
-                    <ul class="nav-menu">
-                        <li>
-                            <a
-                                href="#how-it-works"
-                                class="nav-link"
-                                aria-current="page"
-                                >How It Works</a
-                            >
-                        </li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="#mission" class="nav-link">Mission</a></li>
-                        <li>
-                            <a href="#contact" class="nav-link">Contact Us</a>
-                        </li>
-                    </ul>
-                </nav>
+        <nav class="navbar-pill">
+          <ul class="nav-menu">
+            <li>
+              <a href="#how-it-works" class="nav-link" aria-current="page"
+                >How It Works</a
+              >
+            </li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#mission" class="nav-link">Mission</a></li>
+            <li>
+              <a href="#contact" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
 
-                <button
-                    class="mobile-menu-toggle"
-                    aria-label="Toggle mobile menu"
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-visual">
+            <div class="infinity-container" id="infinity-3d-container">
+              <!-- Video Animation -->
+              <video
+                class="logo-animation-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                <source
+                  src="./assets/videos/LimitlessFoundationTransparent.webm"
+                  type="video/webm"
+                />
+              </video>
+            </div>
+          </div>
+          <div class="hero-text">
+            <div class="hero-description">
+              <div class="hero-main-text">Need Greek Life fundraising?</div>
+              <div class="hero-sub-text">
+                We handle the strategy, tech, and logistics while your chapter
+                focuses on building community and achieving your goals.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How It Works</h2>
+        </div>
+
+        <ol class="steps-grid">
+          <li class="step-item">
+            <div class="step-floating-text">
+              <div class="step-word">Launch</div>
+            </div>
+            <div class="step-card">
+              <p class="step-description">
+                We handle the setup, strategy, and logistics — so you don't have
+                to. Just tell us your goal and we'll take it from there.
+              </p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-floating-text">
+              <div class="step-word">Share</div>
+            </div>
+            <div class="step-card">
+              <p class="step-description">
+                Use our built-in tools to spread the word fast. Whether it's
+                texts, emails, or social media, we help you connect with the
+                right people.
+              </p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-floating-text">
+              <div class="step-word">Succeed</div>
+            </div>
+            <div class="step-card">
+              <p class="step-description">
+                Sit back and watch the donations roll in. Our platform tracks
+                everything and keeps your campaign running smoothly from start
+                to finish.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Meet the Team</h2>
+        </div>
+
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-photo">
+              <img
+                src="images/tanner-blackwell-headshot.jpg"
+                alt="Tanner Blackwell"
+                class="photo-image"
+                onerror="handleImageError(this)"
+              />
+              <div class="photo-placeholder">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+            <div class="team-info">
+              <div class="team-header">
+                <h3 class="team-name">Tanner Blackwell</h3>
+                <a
+                  href="https://www.linkedin.com/in/tanner-blackwell15/"
+                  target="_blank"
+                  class="linkedin-icon-btn"
+                  aria-label="Tanner Blackwell's LinkedIn"
                 >
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </div>
+              <p class="team-title">Founder & CEO</p>
+              <p class="team-description">
+                Tanner is the founder of Limitless Fundraising and a proud
+                graduate of Texas A&M University. With a background in sales and
+                healthcare strategy-and firsthand experience in Greek life- he
+                understands the real-world challenges chapters face when it
+                comes to fundraising. His goal? To simplify the process, bring
+                transparency to the system, and help organizations raise more
+                with less hassle. Tanner's innovative, results-driven approach
+                is built around empowering students and making fundraising
+                actually work.
+              </p>
             </div>
-        </header>
+          </div>
 
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <div class="hero-action-words">
-                            <div class="action-word">Unlock</div>
-                            <div class="action-word">Limitless</div>
-                            <div class="action-word">Potential</div>
-                        </div>
-                        <p class="hero-description">
-                            Need Greek Life fundraising? We handle the strategy,
-                            tech, and logistics while your chapter focuses on
-                            building community and achieving your goals.
-                        </p>
-                    </div>
-                    <div class="hero-visual">
-                        <div
-                            class="infinity-container"
-                            id="infinity-3d-container"
-                        >
-                            <!-- Video Animation -->
-                            <video
-                                class="logo-animation-video"
-                                autoplay
-                                muted
-                                loop
-                                playsinline
-                                preload="metadata"
-                            >
-                                <source
-                                    src="./assets/videos/LimitlessFoundationTransparent.webm"
-                                    type="video/webm"
-                                />
-                            </video>
-                        </div>
-                    </div>
-                </div>
+          <div class="team-card">
+            <div class="team-photo">
+              <img
+                src="images/matt-tolve-headshot.jpg"
+                alt="Matt Tolve"
+                class="photo-image"
+                onerror="handleImageError(this)"
+              />
+              <div class="photo-placeholder">
+                <i class="fa-solid fa-user"></i>
+              </div>
             </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="how-it-works-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">How It Works</h2>
-                </div>
-
-                <ol class="steps-grid">
-                    <li class="step-item">
-                        <div class="step-floating-text">
-                            <div class="step-word">Launch</div>
-                        </div>
-                        <div class="step-card">
-                            <p class="step-description">
-                                We handle the setup, strategy, and logistics —
-                                so you don't have to. Just tell us your goal and
-                                we'll take it from there.
-                            </p>
-                        </div>
-                    </li>
-
-                    <li class="step-item">
-                        <div class="step-floating-text">
-                            <div class="step-word">Share</div>
-                        </div>
-                        <div class="step-card">
-                            <p class="step-description">
-                                Use our built-in tools to spread the word fast.
-                                Whether it's texts, emails, or social posts, we
-                                help you connect with the right people.
-                            </p>
-                        </div>
-                    </li>
-
-                    <li class="step-item">
-                        <div class="step-floating-text">
-                            <div class="step-word">Succeed</div>
-                        </div>
-                        <div class="step-card">
-                            <p class="step-description">
-                                Sit back and watch the donations roll in. Our
-                                platform tracks everything and keeps your
-                                campaign running smoothly from start to finish.
-                            </p>
-                        </div>
-                    </li>
-                </ol>
+            <div class="team-info">
+              <div class="team-header">
+                <h3 class="team-name">Matt Tolve</h3>
+                <a
+                  href="https://www.linkedin.com/in/matthew-tolve-838048276/"
+                  target="_blank"
+                  class="linkedin-icon-btn"
+                  aria-label="Matt Tolve's LinkedIn"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </div>
+              <p class="team-title">Co-Founder & Strategic Advisor</p>
+              <p class="team-description">
+                Matt is a dedicated Mortgage Banker based in Houston, Texas, and
+                a fellow Texas A&M University graduate. His leadership
+                experience within Greek life-where he held multiple executive
+                roles -gives him deep insight into the inner workings of
+                chapters and the communities they serve. Matt shares a passion
+                for helping others succeed, and his strategic mindset makes him
+                a valuable partner in driving Limitless Fundraising's mission
+                forward.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Meet the Team</h2>
+    <!-- Mission Section -->
+    <section id="mission" class="mission-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Mission</h2>
+        </div>
+
+        <div class="mission-content">
+          <!-- Swiper Carousel (Left Side) -->
+          <div class="mission-carousel">
+            <div class="swiper fraternity-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="images/frat-image1.jpg"
+                    alt="Fraternity event and community building"
+                    class="carousel-image"
+                    loading="lazy"
+                    width="800"
+                    height="500"
+                  />
                 </div>
-
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="team-photo">
-                            <img
-                                src="images/tanner-blackwell-headshot.jpg"
-                                alt="Tanner Blackwell"
-                                class="photo-image"
-                                onerror="handleImageError(this)"
-                            />
-                            <div class="photo-placeholder">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-name">Tanner Blackwell</h3>
-                            <p class="team-title">Founder & CEO</p>
-                            <p class="team-description">
-                                As the founder of Limitless Fundraising, Tanner
-                                brings firsthand experience from Greek life at
-                                Texas A&M University. With a background in sales
-                                and healthcare strategy, he understands the
-                                fundraising challenges chapters face and created
-                                innovative solutions that actually work. His
-                                mission is simple: make fundraising easier, more
-                                transparent, and more rewarding for Greek
-                                organizations.
-                            </p>
-                            <a
-                                href="https://www.linkedin.com/in/tanner-blackwell15/"
-                                target="_blank"
-                                class="linkedin-btn"
-                            >
-                                <i class="fa-brands fa-linkedin"></i> LinkedIn
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-photo">
-                            <img
-                                src="images/matt-tolve-headshot.jpg"
-                                alt="Matt Tolve"
-                                class="photo-image"
-                                onerror="handleImageError(this)"
-                            />
-                            <div class="photo-placeholder">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-name">Matt Tolve</h3>
-                            <p class="team-title">
-                                Co-Founder & Strategic Advisor
-                            </p>
-                            <p class="team-description">
-                                Matt is a dedicated Mortgage Banker based in
-                                Houston, Texas, and proud Texas A&M University
-                                graduate. His extensive leadership experience in
-                                Greek life, including multiple executive roles,
-                                brings invaluable insights into chapter
-                                operations and community building. Matt's
-                                commitment to helping others achieve their goals
-                                makes him the perfect strategic partner for
-                                Limitless Fundraising.
-                            </p>
-                            <a
-                                href="https://www.linkedin.com/in/matthew-tolve-838048276/"
-                                target="_blank"
-                                class="linkedin-btn"
-                            >
-                                <i class="fa-brands fa-linkedin"></i> LinkedIn
-                            </a>
-                        </div>
-                    </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/frat-image2.jpg"
+                    alt="Greek life philanthropy fundraising"
+                    class="carousel-image"
+                    loading="lazy"
+                    width="800"
+                    height="500"
+                  />
                 </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/frat-image3.jpg"
+                    alt="Sorority chapter activities and events"
+                    class="carousel-image"
+                    loading="lazy"
+                    width="800"
+                    height="500"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/frat-image4.jpg"
+                    alt="Greek organization community service"
+                    class="carousel-image"
+                    loading="lazy"
+                    width="800"
+                    height="500"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/frat-image5.jpg"
+                    alt="Fraternity brotherhood and sisterhood"
+                    class="carousel-image"
+                    loading="lazy"
+                    width="800"
+                    height="500"
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="images/frat-image6.jpg"
+                    alt="Greek life fundraising success stories"
+                    class="carousel-image"
+                    loading="lazy"
+                    width="800"
+                    height="500"
+                  />
+                </div>
+              </div>
+              <!-- Navigation arrows -->
+              <div
+                class="swiper-button-next"
+                aria-label="Next slide"
+                tabindex="0"
+                role="button"
+              ></div>
+              <div
+                class="swiper-button-prev"
+                aria-label="Previous slide"
+                tabindex="0"
+                role="button"
+              ></div>
+              <!-- Pagination dots -->
+              <div class="swiper-pagination"></div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Mission Section -->
-        <section id="mission" class="mission-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Our Mission</h2>
-                </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact Us</h2>
+        </div>
 
-                <div class="mission-content">
-                    <!-- Swiper Carousel (Left Side) -->
-                    <div class="mission-carousel">
-                        <div class="swiper fraternity-swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img
-                                        src="images/frat-image1.jpg"
-                                        alt="Fraternity event and community building"
-                                        class="carousel-image"
-                                        loading="lazy"
-                                        width="800"
-                                        height="500"
-                                    />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img
-                                        src="images/frat-image2.jpg"
-                                        alt="Greek life philanthropy fundraising"
-                                        class="carousel-image"
-                                        loading="lazy"
-                                        width="800"
-                                        height="500"
-                                    />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img
-                                        src="images/frat-image3.jpg"
-                                        alt="Sorority chapter activities and events"
-                                        class="carousel-image"
-                                        loading="lazy"
-                                        width="800"
-                                        height="500"
-                                    />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img
-                                        src="images/frat-image4.jpg"
-                                        alt="Greek organization community service"
-                                        class="carousel-image"
-                                        loading="lazy"
-                                        width="800"
-                                        height="500"
-                                    />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img
-                                        src="images/frat-image5.jpg"
-                                        alt="Fraternity brotherhood and sisterhood"
-                                        class="carousel-image"
-                                        loading="lazy"
-                                        width="800"
-                                        height="500"
-                                    />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img
-                                        src="images/frat-image6.jpg"
-                                        alt="Greek life fundraising success stories"
-                                        class="carousel-image"
-                                        loading="lazy"
-                                        width="800"
-                                        height="500"
-                                    />
-                                </div>
-                            </div>
-                            <!-- Navigation arrows -->
-                            <div
-                                class="swiper-button-next"
-                                aria-label="Next slide"
-                                tabindex="0"
-                                role="button"
-                            ></div>
-                            <div
-                                class="swiper-button-prev"
-                                aria-label="Previous slide"
-                                tabindex="0"
-                                role="button"
-                            ></div>
-                            <!-- Pagination dots -->
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
+        <div class="contact-grid">
+          <div class="contact-form-card">
+            <form id="consultation-form" class="consultation-form" novalidate>
+              <div class="form-group">
+                <label for="fullName" class="form-label">Name*</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  class="form-input"
+                  required
+                />
+                <span class="error-message" id="fullName-error"></span>
+              </div>
 
-                    <!-- Mission Content (Right Side) -->
-                    <div class="mission-content-right">
-                        <div class="mission-floating-text">
-                            <div class="mission-headline">Our Platform.</div>
-                            <div class="mission-headline">
-                                Your Chapter's Success.
-                            </div>
-                        </div>
-                        <div class="mission-card">
-                            <p class="mission-description">
-                                Limitless Fundraising is designed to help
-                                fraternities and sororities raise money the
-                                smart way — no spreadsheets, no stress. From
-                                philanthropy events to chapter trips or house
-                                improvements, we make it easy to launch, manage,
-                                and track your campaign from start to finish.
-                                With powerful tools, personalized messaging, and
-                                performance-driven support, your chapter can hit
-                                its goals faster — and have fun doing it. Your
-                                cause. Our tech. One seamless experience.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+              <div class="form-group">
+                <label for="email" class="form-label">Email*</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                />
+                <span class="error-message" id="email-error"></span>
+              </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Contact Us</h2>
-                </div>
+              <div class="form-group">
+                <label for="chapter" class="form-label">Your Chapter*</label>
+                <input
+                  type="text"
+                  id="chapter"
+                  name="chapter"
+                  class="form-input"
+                  required
+                />
+                <span class="error-message" id="chapter-error"></span>
+              </div>
 
-                <div class="contact-grid">
-                    <div class="contact-form-card">
-                        <form
-                            id="consultation-form"
-                            class="consultation-form"
-                            novalidate
-                        >
-                            <div class="form-group">
-                                <label for="fullName" class="form-label"
-                                    >Name*</label
-                                >
-                                <input
-                                    type="text"
-                                    id="fullName"
-                                    name="fullName"
-                                    class="form-input"
-                                    required
-                                />
-                                <span
-                                    class="error-message"
-                                    id="fullName-error"
-                                ></span>
-                            </div>
+              <div class="form-group">
+                <label for="goal" class="form-label">Fundraising Goal*</label>
+                <input
+                  type="text"
+                  id="goal"
+                  name="goal"
+                  class="form-input"
+                  required
+                />
+                <span class="error-message" id="goal-error"></span>
+              </div>
 
-                            <div class="form-group">
-                                <label for="email" class="form-label"
-                                    >Email*</label
-                                >
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    class="form-input"
-                                    required
-                                />
-                                <span
-                                    class="error-message"
-                                    id="email-error"
-                                ></span>
-                            </div>
+              <div class="form-group">
+                <label for="message" class="form-label"
+                  >Share any other relevant details or questions here</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  rows="4"
+                ></textarea>
+              </div>
 
-                            <div class="form-group">
-                                <label for="chapter" class="form-label"
-                                    >Your Chapter*</label
-                                >
-                                <input
-                                    type="text"
-                                    id="chapter"
-                                    name="chapter"
-                                    class="form-input"
-                                    required
-                                />
-                                <span
-                                    class="error-message"
-                                    id="chapter-error"
-                                ></span>
-                            </div>
+              <button type="submit" class="submit-btn" id="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" style="display: none">
+                  <i class="fa-solid fa-spinner fa-spin"></i>
+                  Sending...
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                            <div class="form-group">
-                                <label for="goal" class="form-label"
-                                    >Fundraising Goal*</label
-                                >
-                                <input
-                                    type="text"
-                                    id="goal"
-                                    name="goal"
-                                    class="form-input"
-                                    required
-                                />
-                                <span
-                                    class="error-message"
-                                    id="goal-error"
-                                ></span>
-                            </div>
+    <!-- Floating Footer -->
+    <footer class="floating-footer" role="contentinfo">
+      <div class="footer-email">
+        <a href="mailto:Team@limitlessfundraising.com">Team@limitlessfundraising.com</a>
+      </div>
+      <div class="footer-copyright">
+        © 2025 Limitless Fundraising. All rights reserved.
+      </div>
+      <div class="footer-phone">
+        <a href="tel:+18325720831">(832) 572-0831</a>
+      </div>
+    </footer>
 
-                            <div class="form-group">
-                                <label for="message" class="form-label"
-                                    >Share any other relevant details or
-                                    questions here</label
-                                >
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    class="form-textarea"
-                                    rows="4"
-                                ></textarea>
-                            </div>
+    <!-- Swiper JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav"
+      crossorigin="anonymous"
+    ></script>
 
-                            <button
-                                type="submit"
-                                class="submit-btn"
-                                id="submit-btn"
-                            >
-                                <span class="btn-text">Send Message</span>
-                                <span class="btn-loading" style="display: none">
-                                    <i class="fa-solid fa-spinner fa-spin"></i>
-                                    Sending...
-                                </span>
-                            </button>
-                        </form>
-                    </div>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/smooth-scroll.js"></script>
 
-                    <div class="contact-info-card">
-                        <h3 class="info-title">Contact Information</h3>
+    <!-- EmailJS Initialization -->
+    <script>
+      // Initialize EmailJS with public key
+      emailjs.init("tmieiu124Ber32QOE");
+    </script>
 
-                        <div class="contact-methods">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <p class="contact-label">Email</p>
-                                    <a
-                                        href="mailto:Team@limitlessfundraising.com"
-                                        class="contact-link"
-                                        >Team@limitlessfundraising.com</a
-                                    >
-                                </div>
-                            </div>
+    <!-- Swiper Initialization -->
+    <script>
+      // Get all Swiper elements with the class "fraternity-swiper"
+      const swiperElements = document.querySelectorAll(".fraternity-swiper");
 
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <p class="contact-label">Phone</p>
-                                    <a
-                                        href="tel:+18325720831"
-                                        class="contact-link"
-                                        >(832) 572-0831</a
-                                    >
-                                </div>
-                            </div>
+      // Check if any Swiper elements exist before initializing
+      if (swiperElements.length > 0) {
+        // Iterate over each Swiper element and initialize a separate instance
+        swiperElements.forEach((swiperElement, index) => {
+          // Initialize Swiper carousel for each element
+          const swiper = new Swiper(swiperElement, {
+            // Enable autoplay
+            autoplay: {
+              delay: 6500,
+              disableOnInteraction: false,
+            },
+            // Enable loop
+            loop: true,
+            // Speed of transition
+            speed: 800,
+            // Effect
+            effect: "slide",
+            // Navigation arrows
+            navigation: {
+              nextEl: swiperElement.querySelector(".swiper-button-next"),
+              prevEl: swiperElement.querySelector(".swiper-button-prev"),
+            },
+            // Pagination dots
+            pagination: {
+              el: swiperElement.querySelector(".swiper-pagination"),
+              clickable: true,
+              type: "bullets",
+            },
+            // Responsive breakpoints
+            breakpoints: {
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+              },
+            },
+          });
+        });
+      }
 
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <p class="contact-label">Instagram</p>
-                                    <span class="contact-link"
-                                        >Coming Soon</span
-                                    >
-                                </div>
-                            </div>
+      // Add error handling for carousel images
+      const carouselImages = document.querySelectorAll(".carousel-image");
+      carouselImages.forEach((img, index) => {
+        img.addEventListener("error", function () {
+          console.log(`Image failed to load: frat-image${index + 1}.jpg`);
+          // Add placeholder or hide broken image
+          this.style.display = "none";
+        });
 
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fa-solid fa-clock"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <p class="contact-label">Operating Hours</p>
-                                    <span class="contact-link"
-                                        >Monday - Friday: 8:00 AM - 6:00
-                                        PM</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact-logo">
-                            <video
-                                class="contact-logo-image"
-                                autoplay
-                                muted
-                                loop
-                                playsinline
-                                preload="metadata"
-                            >
-                                <source
-                                    src="./assets/videos/LimitlessFoundationUpAndDown.webm"
-                                    type="video/webm"
-                                />
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Floating Copyright -->
-        <footer class="floating-copyright" role="contentinfo">
-            © 2025 Limitless Fundraising. All rights reserved.
-        </footer>
-
-        <!-- Swiper JavaScript -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-            integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav"
-            crossorigin="anonymous"
-        ></script>
-
-        <!-- JavaScript -->
-        <script src="js/main.js"></script>
-        <script src="js/smooth-scroll.js"></script>
-
-        <!-- EmailJS Initialization -->
-        <script>
-            // Initialize EmailJS with public key
-            emailjs.init("tmieiu124Ber32QOE");
-        </script>
-
-        <!-- Swiper Initialization -->
-        <script>
-            // Get all Swiper elements with the class "fraternity-swiper"
-            const swiperElements =
-                document.querySelectorAll(".fraternity-swiper");
-
-            // Check if any Swiper elements exist before initializing
-            if (swiperElements.length > 0) {
-                // Iterate over each Swiper element and initialize a separate instance
-                swiperElements.forEach((swiperElement, index) => {
-                    // Initialize Swiper carousel for each element
-                    const swiper = new Swiper(swiperElement, {
-                        // Enable autoplay
-                        autoplay: {
-                            delay: 4000,
-                            disableOnInteraction: false,
-                        },
-                        // Enable loop
-                        loop: true,
-                        // Speed of transition
-                        speed: 800,
-                        // Effect
-                        effect: "slide",
-                        // Navigation arrows
-                        navigation: {
-                            nextEl: swiperElement.querySelector(
-                                ".swiper-button-next",
-                            ),
-                            prevEl: swiperElement.querySelector(
-                                ".swiper-button-prev",
-                            ),
-                        },
-                        // Pagination dots
-                        pagination: {
-                            el: swiperElement.querySelector(
-                                ".swiper-pagination",
-                            ),
-                            clickable: true,
-                            type: "bullets",
-                        },
-                        // Responsive breakpoints
-                        breakpoints: {
-                            640: {
-                                slidesPerView: 1,
-                                spaceBetween: 20,
-                            },
-                            768: {
-                                slidesPerView: 1,
-                                spaceBetween: 30,
-                            },
-                            1024: {
-                                slidesPerView: 1,
-                                spaceBetween: 40,
-                            },
-                        },
-                    });
-                });
-            }
-
-            // Add error handling for carousel images
-            const carouselImages = document.querySelectorAll(".carousel-image");
-            carouselImages.forEach((img, index) => {
-                img.addEventListener("error", function () {
-                    console.log(
-                        `Image failed to load: frat-image${index + 1}.jpg`,
-                    );
-                    // Add placeholder or hide broken image
-                    this.style.display = "none";
-                });
-
-                img.addEventListener("load", function () {
-                    console.log(
-                        `Image loaded successfully: frat-image${index + 1}.jpg`,
-                    );
-                });
-            });
-        </script>
-    </body>
+        img.addEventListener("load", function () {
+          console.log(`Image loaded successfully: frat-image${index + 1}.jpg`);
+        });
+      });
+    </script>
+  </body>
 </html>

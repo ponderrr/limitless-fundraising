@@ -45,12 +45,12 @@ function initNavigation() {
   // Close mobile menu on link click and add pulse animation
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
-    link.addEventListener("click", function(e) {
+    link.addEventListener("click", function (e) {
       closeMobileMenuOnClick();
-      
+
       // Add pulse animation
       this.classList.add("clicked");
-      
+
       // Remove the class after animation completes
       setTimeout(() => {
         this.classList.remove("clicked");
@@ -86,7 +86,7 @@ function closeMobileMenuOnClick() {
   if (navbarPill && navbarPill.classList.contains("mobile-active")) {
     navbarPill.classList.remove("mobile-active");
     mobileMenuToggle.classList.remove("active");
-    
+
     // Restore body scroll
     document.body.style.overflow = "";
   }
@@ -160,9 +160,21 @@ function initContactForm() {
   // Form submission
   form.addEventListener("submit", handleFormSubmit);
 
-  // Real-time validation
-  const inputs = form.querySelectorAll("input[required], textarea");
+  // Clear any initial red styling on page load
+  const inputs = form.querySelectorAll("input, textarea");
   inputs.forEach((input) => {
+    // Remove any error classes that might be present on load
+    input.classList.remove("error", "valid");
+
+    // Ensure clean initial state
+    input.style.borderColor = "rgba(255, 255, 255, 0.1)";
+    input.style.borderBottomColor = "rgba(255, 255, 255, 0.1)";
+    input.style.backgroundColor = "rgba(255, 255, 255, 0.02)";
+  });
+
+  // Real-time validation
+  const requiredInputs = form.querySelectorAll("input[required], textarea");
+  requiredInputs.forEach((input) => {
     input.addEventListener("blur", function () {
       validateField(this);
     });
@@ -180,9 +192,14 @@ function validateField(field) {
   const fieldName = field.name;
   const errorElement = document.getElementById(fieldName + "-error");
 
-  // Clear previous error
+  // Clear previous error and validation classes
   hideError(fieldName);
-  field.classList.remove("error");
+  field.classList.remove("error", "valid");
+
+  // If field is empty, don't show any validation styling
+  if (value.length === 0) {
+    return true;
+  }
 
   // Validation rules
   let isValid = true;
@@ -219,10 +236,13 @@ function validateField(field) {
       break;
   }
 
-  // Show/hide error
+  // Show/hide error and apply appropriate styling
   if (!isValid) {
     showError(fieldName, errorMessage);
     field.classList.add("error");
+  } else {
+    // Field is valid and has content
+    field.classList.add("valid");
   }
 
   return isValid;
@@ -366,10 +386,10 @@ function resetForm() {
   const form = document.getElementById("consultation-form");
   form.reset();
 
-  // Clear any error states
-  const errorFields = form.querySelectorAll(".error");
-  errorFields.forEach((field) => {
-    field.classList.remove("error");
+  // Clear any error and valid states
+  const validationFields = form.querySelectorAll(".error, .valid");
+  validationFields.forEach((field) => {
+    field.classList.remove("error", "valid");
   });
 
   // Clear error messages
@@ -390,22 +410,22 @@ function initImageFallbacks() {
 }
 
 function initVideoHandling() {
-  const video = document.querySelector('.logo-animation-video');
-  
+  const video = document.querySelector(".logo-animation-video");
+
   if (video) {
     // Handle video load success
-    video.addEventListener('loadeddata', function() {
-      console.log('Video loaded successfully');
+    video.addEventListener("loadeddata", function () {
+      console.log("Video loaded successfully");
     });
-    
+
     // Handle video load error
-    video.addEventListener('error', function() {
-      console.log('Video failed to load');
+    video.addEventListener("error", function () {
+      console.log("Video failed to load");
     });
-    
+
     // Handle video play error
-    video.addEventListener('stalled', function() {
-      console.log('Video playback stalled');
+    video.addEventListener("stalled", function () {
+      console.log("Video playback stalled");
     });
   }
 }
