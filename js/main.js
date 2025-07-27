@@ -84,7 +84,7 @@ function closeMobileMenuOnClick() {
 }
 
 function handleScroll() {
-  const sections = ["hero", "about", "mission", "how-it-works", "contact"];
+  const sections = ["hero", "how-it-works", "about", "mission", "contact"];
   const navLinks = document.querySelectorAll(".nav-link");
 
   let currentSection = "";
