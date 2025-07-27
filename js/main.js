@@ -42,48 +42,53 @@ function initNavigation() {
   // Initialize active section on page load
   handleScroll();
 
-  // Close mobile menu on link click
+  // Close mobile menu on link click and add pulse animation
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
-    link.addEventListener("click", closeMobileMenuOnClick);
+    link.addEventListener("click", function(e) {
+      closeMobileMenuOnClick();
+      
+      // Add pulse animation
+      this.classList.add("clicked");
+      
+      // Remove the class after animation completes
+      setTimeout(() => {
+        this.classList.remove("clicked");
+      }, 600);
+    });
   });
 }
 
 function toggleMobileMenu() {
   const navbarPill = document.querySelector(".navbar-pill");
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
   const hamburgerLines = document.querySelectorAll(".hamburger-line");
 
   if (navbarPill) {
     navbarPill.classList.toggle("mobile-active");
+    mobileMenuToggle.classList.toggle("active");
 
-    // Animate hamburger
-    hamburgerLines.forEach((line, index) => {
-      if (navbarPill.classList.contains("mobile-active")) {
-        if (index === 0)
-          line.style.transform = "rotate(45deg) translate(5px, 5px)";
-        if (index === 1) line.style.opacity = "0";
-        if (index === 2)
-          line.style.transform = "rotate(-45deg) translate(7px, -6px)";
-      } else {
-        line.style.transform = "none";
-        line.style.opacity = "1";
-      }
-    });
+    // Animate hamburger using CSS classes instead of inline styles
+    if (navbarPill.classList.contains("mobile-active")) {
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore body scroll when menu is closed
+      document.body.style.overflow = "";
+    }
   }
 }
 
 function closeMobileMenuOnClick() {
   const navbarPill = document.querySelector(".navbar-pill");
-  const hamburgerLines = document.querySelectorAll(".hamburger-line");
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
 
   if (navbarPill && navbarPill.classList.contains("mobile-active")) {
     navbarPill.classList.remove("mobile-active");
-
-    // Reset hamburger
-    hamburgerLines.forEach((line) => {
-      line.style.transform = "none";
-      line.style.opacity = "1";
-    });
+    mobileMenuToggle.classList.remove("active");
+    
+    // Restore body scroll
+    document.body.style.overflow = "";
   }
 }
 
