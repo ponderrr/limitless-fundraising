@@ -128,20 +128,6 @@ To simplify Greek life fundraising by providing innovative solutions that allow 
 4. **Nationwide Support**: Available to fraternities and sororities across the country
 5. **Expert Team**: Founded by Texas A&M graduates with deep Greek life experience
 
-## 🔧 Development
-
-### Making Changes
-
-1. Edit the appropriate files (HTML, CSS, JS)
-2. Test changes in your browser
-3. Update configuration in `config.json` if needed
-
-### Adding New Features
-
-- Follow the existing code structure
-- Use the ConfigManager for any new configuration values
-- Ensure responsive design for all new elements
-
 ## 📄 License
 
 © 2025 Limitless Fundraising. All rights reserved.
