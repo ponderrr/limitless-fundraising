@@ -34,13 +34,6 @@ Limitless Fundraising handles the strategy, technology, and logistics of fundrai
 1. Open `index.html` in your web browser
 2. The site will load with all features ready to use
 
-### Configuration
-
-The site uses a configuration system for easy customization:
-
-- Edit `config.json` to update EmailJS settings and contact information
-- See `CONFIGURATION.md` for detailed setup instructions
-
 ## 📱 Website Sections
 
 ### Hero Section
