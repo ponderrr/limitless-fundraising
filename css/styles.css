@@ -1372,6 +1372,8 @@ p {
   color: rgba(255, 255, 255, 0.6);
   text-align: center;
   pointer-events: auto;
+  text-decoration: none;
+  transition: all 200ms ease;
 }
 
 .footer-copyright {
@@ -1381,15 +1383,8 @@ p {
   white-space: nowrap;
 }
 
-.footer-email a,
-.footer-phone a {
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  transition: all 200ms ease;
-}
-
-.footer-email a:hover,
-.footer-phone a:hover {
+.footer-email:hover,
+.footer-phone:hover {
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 0 0 8px rgba(76, 169, 239, 0.3);
 }
@@ -2163,6 +2158,11 @@ p {
   .footer-email,
   .footer-phone {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px; /* Ensure touch target is large enough */
+    min-width: 44px; /* Ensure touch target is large enough */
   }
 
   .footer-email,
