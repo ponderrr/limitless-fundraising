@@ -34,13 +34,6 @@ Limitless Fundraising handles the strategy, technology, and logistics of fundrai
 1. Open `index.html` in your web browser
 2. The site will load with all features ready to use
 
-### Configuration
-
-The site uses a configuration system for easy customization:
-
-- Edit `config.json` to update EmailJS settings and contact information
-- See `CONFIGURATION.md` for detailed setup instructions
-
 ## 📱 Website Sections
 
 ### Hero Section
@@ -134,20 +127,6 @@ To simplify Greek life fundraising by providing innovative solutions that allow 
 3. **Proven Results**: Built by Greek life members for Greek life members
 4. **Nationwide Support**: Available to fraternities and sororities across the country
 5. **Expert Team**: Founded by Texas A&M graduates with deep Greek life experience
-
-## 🔧 Development
-
-### Making Changes
-
-1. Edit the appropriate files (HTML, CSS, JS)
-2. Test changes in your browser
-3. Update configuration in `config.json` if needed
-
-### Adding New Features
-
-- Follow the existing code structure
-- Use the ConfigManager for any new configuration values
-- Ensure responsive design for all new elements
 
 ## 📄 License
 
