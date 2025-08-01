@@ -1448,27 +1448,17 @@ p {
     color: var(--text-primary);
 }
 
-.contact-logo-container {
-    margin-top: auto; /* Pushes logo to the bottom */
-    text-align: center;
-    padding-top: 20px;
-}
-
-.contact-logo-image {
-    max-width: 150px; /* Adjust size as needed */
-    height: auto;
-    filter: drop-shadow(0 0 10px rgba(76, 169, 239, 0.2));
-}
-
 .contact-video-container {
     margin-top: 20px;
     text-align: center;
+    height: 478px; /* Example height, you can change this */
+    overflow: hidden; /* Ensures video content outside the container is hidden */
 }
 
 .contact-video {
     width: 100%;
-    max-width: 300px; /* Adjust based on desired size */
-    height: auto;
+    height: 100%; /* Make video fill the height of its container */
+    object-fit: cover; /* Ensures the video covers the entire container, cropping if necessary */
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -2037,14 +2027,6 @@ p {
         font-size: 1.1em;
     }
 
-    .contact-logo-container {
-        padding-top: 15px;
-    }
-
-    .contact-logo-image {
-        max-width: 120px;
-    }
-
     .contact-video-container {
         margin-top: 15px;
     }
@@ -2286,14 +2268,6 @@ p {
 
     .contact-info-item i {
         font-size: 1em;
-    }
-
-    .contact-logo-container {
-        padding-top: 10px;
-    }
-
-    .contact-logo-image {
-        max-width: 100px;
     }
 
     .contact-video-container {
