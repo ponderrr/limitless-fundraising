@@ -525,164 +525,35 @@ p {
     white-space: normal; /* Allows breaking at spaces */
 }
 
+/* In the .hero-visual block (around line 249) */
 .hero-visual {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end; /* Changed from flex-start to flex-end to move content to the right */
     align-items: center;
     position: relative;
     margin-right: 0;
 }
 
 .infinity-container {
+    margin-top: 10px;
     width: 100%;
-    max-width: 100%;
-    aspect-ratio: 4/3;
-    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    max-width: 1000px; /* Ensures the container doesn't overflow */
 }
 
-/* Video Animation Styles */
 .logo-animation-video {
-    width: 120%;
-    height: 120%;
+    width: 200%; /* Increased from 120% to make the video visually larger */
+    height: auto; /* Increased from 120% to make the video visually larger */
     object-fit: contain;
     background: transparent;
-    margin-left: -10%;
-    margin-top: -10%;
-}
-
-/* Fallback styles when video fails to load */
-.infinity-fallback {
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 50px;
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 0 60px rgba(76, 169, 239, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 400ms ease;
-}
-
-.infinity-fallback:hover {
-    transform: translateY(-8px);
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.4),
-        0 0 80px rgba(76, 169, 239, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.infinity-fallback::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        transparent 50%
-    );
-    border-radius: 20px;
-    pointer-events: none;
-}
-
-.infinity-symbol {
-    font-size: 6.5rem;
-    font-weight: 800;
-    background: linear-gradient(
-        135deg,
-        var(--logo-light-blue) 0%,
-        var(--logo-dark-blue) 50%,
-        var(--logo-light-blue) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: pulse 3s ease-in-out infinite;
-    z-index: 3;
-    position: relative;
-    filter: drop-shadow(0 0 20px rgba(76, 169, 239, 0.3));
-}
-
-/* Infinity Brand Text */
-.infinity-brand-text {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 20px;
-    background: linear-gradient(
-        135deg,
-        var(--logo-light-blue) 0%,
-        var(--logo-dark-blue) 50%,
-        var(--logo-light-blue) 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 8px rgba(76, 169, 239, 0.2));
-    z-index: 3;
-    position: relative;
-}
-
-.geometric-grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 24px 24px;
-    z-index: 1;
-    opacity: 0.6;
-    border-radius: 20px;
-}
-
-/* Disable geometric grid on smaller devices for better performance */
-@media (max-width: 768px) {
-    .geometric-grid {
-        background-image: none;
-        opacity: 0;
-    }
-}
-
-/* Disable geometric grid for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .geometric-grid {
-        background-image: none;
-        opacity: 0;
-    }
-}
-
-/* Simplify geometric grid on medium devices for moderate performance improvement */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .geometric-grid {
-        background-size: 32px 32px;
-        opacity: 0.4;
-    }
-}
-
-@keyframes pulse {
-    0%,
-    100% {
-        transform: scale(1) rotate(0deg);
-        filter: drop-shadow(0 0 20px rgba(76, 169, 239, 0.3));
-    }
-    50% {
-        transform: scale(1.05) rotate(1deg);
-        filter: drop-shadow(0 0 30px rgba(76, 169, 239, 0.5));
-    }
+    margin-left: 15%; /* Adjusted from -10% to compensate for increased width and balance positioning */
+    margin-top: -15%; /* Adjusted from -10% to compensate for increased height and balance positioning */
 }
 
 /* ========================================
@@ -1833,32 +1704,17 @@ p {
     }
 
     .infinity-container {
-        width: 100%;
-        height: auto;
-        max-width: 720px;
-        display: flex;
-        justify-content: center;
+        max-width: 100%;
+        padding: 10px;
+        margin-top: 20px;
         align-items: center;
     }
 
     .logo-animation-video {
-        width: 100%;
-        height: 100%;
+        width: 100%; /* Scale video to fit container */
+        margin-left: 0; /* Center it */
+        margin-top: 0; /* Remove negative offset */
         object-fit: contain;
-        margin: 0;
-    }
-
-    .infinity-fallback {
-        padding: 40px;
-    }
-
-    .infinity-symbol {
-        font-size: 5rem;
-    }
-
-    .infinity-brand-text {
-        font-size: 1.25rem;
-        margin-top: 16px;
     }
 
     /* About Section */
@@ -2125,20 +1981,6 @@ p {
         font-size: 1.125rem;
     }
 
-    .hero-section {
-        background-image:
-            radial-gradient(
-                circle at 30% 70%,
-                rgba(76, 169, 239, 0.06) 0%,
-                transparent 35%
-            ),
-            radial-gradient(
-                circle at 70% 30%,
-                rgba(11, 91, 150, 0.06) 0%,
-                transparent 35%
-            );
-    }
-
     .hero-description {
         display: flex;
         flex-direction: column;
@@ -2185,33 +2027,17 @@ p {
     }
 
     .infinity-container {
-        width: 100%;
-        max-width: 450px;
-        aspect-ratio: 3/2;
+        margin-top: 30px;
+        padding: 8px;
+        max-width: 100%;
+        align-items: center;
     }
 
     .logo-animation-video {
         width: 100%;
-        height: 100%;
-    }
-
-    .infinity-fallback {
-        padding: 30px;
-        border-radius: 20px;
-    }
-
-    .infinity-symbol {
-        font-size: 4rem;
-    }
-
-    .infinity-brand-text {
-        font-size: 1.125rem;
-        margin-top: 12px;
-    }
-
-    .geometric-grid {
-        background-size: 16px 16px;
-        border-radius: 20px;
+        margin-left: 0;
+        margin-top: 0;
+        object-fit: contain;
     }
 
     .btn-primary,
