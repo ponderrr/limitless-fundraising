@@ -1834,8 +1834,8 @@ p {
 
     .infinity-container {
         width: 100%;
+        height: auto;
         max-width: 720px;
-        aspect-ratio: 3/2;
         display: flex;
         justify-content: center;
         align-items: center;
