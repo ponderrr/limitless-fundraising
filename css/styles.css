@@ -511,14 +511,18 @@ p {
     margin: 0;
 }
 
+.highlight-question {
+    font-weight: bold; /* Optional, can emphasize the question */
+    margin-bottom: 10px; /* Adjust space between the question and the rest of the text */
+}
+
 .hero-sub-text {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin: 0;
-    max-width: 100%;
+    display: block; /* Ensure it's treated as a block element */
+    width: 110%; /* Ensures it takes up the full width */
+    font-size: 1.2rem; /* Adjust size as needed */
+    line-height: 1.6; /* Line spacing for readability */
+    word-wrap: break-word; /* Allows wrapping of long words */
+    white-space: normal; /* Allows breaking at spaces */
 }
 
 .hero-visual {
