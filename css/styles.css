@@ -531,7 +531,6 @@ p {
     align-items: center;
     position: relative;
     margin-right: 0;
-    order: -1;
 }
 
 .infinity-container {
@@ -1506,11 +1505,34 @@ p {
 /* Tablet Styles */
 @media (max-width: 1024px) {
     .hero-main-text {
-        font-size: 2.5rem !important; /* Adjusted for mobile, important to override larger desktop font-size */
+        font-size: 4.75rem; /* Slightly smaller than desktop */
+        font-weight: 800;
+        background: linear-gradient(135deg, #0a4773, #0b5b96, #4ca9ef);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+        margin: 0;
+        text-align: center;
     }
 
     .hero-sub-text {
+        display: block;
+        width: 100%;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        word-wrap: break-word;
+        white-space: normal;
+        text-align: center;
+        padding: 0 14px;
+    }
+
+    .highlight-question {
+        font-weight: bold;
         font-size: 1.25rem;
+        margin-bottom: 10px;
+        text-align: center;
     }
 
     .section-title {
@@ -1773,12 +1795,33 @@ p {
     }
 
     .hero-main-text {
-        font-size: 2.5rem !important; /* Adjusted for mobile */
+        font-size: 4rem; /* Scaled down from desktop */
+        font-weight: 800;
+        background: linear-gradient(135deg, #0a4773, #0b5b96, #4ca9ef);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+        margin: 0;
         text-align: center;
     }
 
     .hero-sub-text {
-        font-size: 1.1rem !important;
+        display: block;
+        width: 100%; /* Prevent overflow */
+        font-size: 1.1rem;
+        line-height: 1.6;
+        word-wrap: break-word;
+        white-space: normal;
+        text-align: center;
+        padding: 0 12px;
+    }
+
+    .highlight-question {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
         text-align: center;
     }
 
@@ -1786,6 +1829,7 @@ p {
         margin-right: 0;
         display: grid;
         place-items: center;
+        order: -1;
     }
 
     .infinity-container {
@@ -2105,18 +2149,39 @@ p {
     }
 
     .hero-main-text {
-        font-size: 2rem !important; /* Adjusted for smaller mobile */
+        font-size: 3rem; /* Scaled down for smaller screens */
+        font-weight: 800;
+        background: linear-gradient(135deg, #0a4773, #0b5b96, #4ca9ef);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+        margin: 0;
         text-align: center;
     }
 
     .hero-sub-text {
-        font-size: 1.1rem !important;
+        display: block;
+        width: 100%; /* Prevent horizontal overflow */
+        font-size: 1rem; /* Slightly smaller for tighter layouts */
+        line-height: 1.5;
+        word-wrap: break-word;
+        white-space: normal;
         text-align: center;
-        line-height: 1.4;
+        padding: 0 10px;
+    }
+
+    .highlight-question {
+        font-weight: bold;
+        font-size: 1.1rem; /* Optional: slightly larger emphasis */
+        margin-bottom: 8px;
+        text-align: center;
     }
 
     .hero-visual {
         margin-right: 0;
+        order: -1;
     }
 
     .infinity-container {
