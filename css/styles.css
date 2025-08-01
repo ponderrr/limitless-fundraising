@@ -1500,41 +1500,6 @@ p {
     white-space: nowrap;
 }
 
-/* Removed: Footer phone/email styles */
-/* .footer-email,
-.footer-phone {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.6);
-    text-align: center;
-    pointer-events: auto;
-    text-decoration: none;
-    transition: all 200ms ease;
-}
-
-.footer-copyright {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-}
-
-.footer-email:hover,
-.footer-phone:hover {
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 0 0 8px rgba(76, 169, 239, 0.3);
-} */
-
-/* Desktop - show text, hide icons */
-/* .footer-icon {
-    display: none;
-}
-
-.footer-text {
-    display: inline;
-} */
-
 /* LinkedIn icon visibility control */
 .mobile-linkedin {
     display: none;
